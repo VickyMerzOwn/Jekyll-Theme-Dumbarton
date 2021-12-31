@@ -84,12 +84,12 @@ layout: default
                 <p class="card-text">{{section.description}}</p>
               </div>
             {% endif %}
-          {% else %}  
+          <!-- {% else %}  
             {% if section.name == "Presentations" %}
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                 <p><i>{{section.description}}</i></p>
                 <p class="card-text">{% bibliography -f presentations %}</p>              
-              </div>
+              </div> -->
             {% elsif section.name == "Projects" %}
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                 <p><i>{{section.description}}</i></p>
@@ -110,7 +110,7 @@ layout: default
                   {% endfor %}
                 </div>        
               </div>
-            {% elsif section.name == "Teaching" %}
+            <!-- {% elsif section.name == "Teaching" %}
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                 <p><i>{{section.description}}</i></p>
                     {% for courses in site.data.teaching %}
@@ -126,7 +126,7 @@ layout: default
                       </div>
                     </div>
                     {% endfor %}
-              </div>
+              </div> -->
             {% elsif section.name == "Coursework" %}
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                 <p><i>{{section.description}}</i></p>

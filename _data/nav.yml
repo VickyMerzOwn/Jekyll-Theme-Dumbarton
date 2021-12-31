@@ -4,8 +4,8 @@ links:
 - title: About
   url: about.html
 
-- title: Publications
-  url: publications.html
+# - title: Publications
+#   url: publications.html
 
 - title: Blog
   url: blog.html

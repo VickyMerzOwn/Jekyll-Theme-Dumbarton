@@ -1,25 +1,25 @@
-- name: Publications
-  id: publications
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  url: publications.html
-  first: true
+# - name: Publications
+#   id: publications
+#   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+#   url: publications.html
+#   first: true
   
 - name: Coursework
   id: courses
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: I plan on uploading my significant works as part of the courses I take at IIT Bhilai.
   content: 
   first: false
 
-- name: Teaching
-  id: teaching
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  content: 
-  url: teaching.html
-  first: false
+# - name: Teaching
+#   id: teaching
+#   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+#   content: 
+#   url: teaching.html
+#   first: false
 
 - name: Projects
   id: projects
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: No major projects as of yet, but I am sure working on some.
   content: 
   url: projects.html
   first: false

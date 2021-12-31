@@ -8,8 +8,8 @@
 # -----------BASE SETTINGS---------------#
 #========================================#
 
-title: Dumbarton 
-email: 
+title: vsatvik 
+email: vemugantisesha@iitbhilai.ac.in
 description: a minimalistic jekyll theme for academics
 baseurl:                                       # the subpath of your site, e.g. /blog
 url: "https://dumbarton.netlify.app/"          # the base hostname & protocol for your site, e.g. http://example.com
@@ -19,22 +19,21 @@ image_alt: A minimalistic jekyll theme for academic    # image description
 # =======================================#
 # -----------SITE SETTINGS---------------#
 #========================================#: 
-author: John Doe 
-profile_image: /assets/img/avatar/cropped.png #/assets/img/avatar/avatar.jpeg 
+author: Satvik Vemuganti
+profile_image: /assets/img/avatar/IMG_5508.JPG #/assets/img/avatar/avatar.jpeg 
 occupation: 
 snippet:
-twitter: tbutler0x90
-github: tcbutler320
-linkedin: tyler-b-a700a1aa
-stackoverflow: '12935605'
-website: https://tbutler.org
+twitter: VikSat444
+github: VickyMerzOwn
+linkedin: satvik-vemuganti
+stackoverflow: '15291662'
+website: https://vsatvik.in
 codepen: 
 medium: 
-email: developer.tbutler@gmail.com
-keybase: tbutler320
+email: vsatvik2003@gmail.com
 pgp: 
 ctftime: 
-phonenumber: 
+phonenumber: +91 701 3962027
 
 #========================================#
 # --------- UI THEMES -------------------#
@@ -116,7 +115,7 @@ exclude:
 # -----JEKYLL SCHOLAR SETTINGS-----------#
 #========================================#
 scholar:
-  last_name: Dumbarton
+  last_name: Satvik
   style: apa
   locale: en
   source: /_bibliography/

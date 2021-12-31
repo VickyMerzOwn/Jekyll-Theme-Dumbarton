@@ -3,7 +3,7 @@ layout: home
 title: 
 date: 2020-11-20 
 ---
-### Hi, I'm Dumbarton 👋
-Dumbarton is a Jekyll Theme developed by [Tyler Butler](https://github.com/tcbutler320). The theme is designed for academics and features a simple home page with an about me section and an interactive highlights section to describe publications, coursework, courses taught, and projects. You can checkout the project on [Github](https://github.com/tcbutler320/Jekyll-Theme-Dumbarton), feel free to make contributions and feature requests and don't forget to give it a star.
+### Hi, I'm Satvik 👋
+Welcome to My Website! I am an undergraduate student pursuing my Bachelor's of Technology in Computer Science & Engineering from the Department of EECS at the Indian Institute of Technology, Bhilai. I have recently fallen in love with the Science of Computers as a whole, but prior to that, I did enjoy tackling Mathematic problems and was always blown away by Physics. However, one thing I have never stopped feeling passionate about is the game of cricket. Always an avid sports-nut, as my friends call me, when the men in blue are on the field, I'm right in front of the telly. <br>
 
 <a href="/contact.html" class="highlighted">Contact Me</a>
