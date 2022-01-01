@@ -11,8 +11,8 @@
 title: vsatvik 
 email: vemugantisesha@iitbhilai.ac.in
 description: a minimalistic jekyll theme for academics
-baseurl:                                       # the subpath of your site, e.g. /blog
-url: "https://vsatvik.in"          # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "https://vsatvik.in"                                # the subpath of your site, e.g. /blog
+url: ""          # the base hostname & protocol for your site, e.g. http://example.com
 image: /assets/img/dumbarton.png               # used to generate site link preview
 image_alt: A minimalistic jekyll theme for academic    # image description
 
