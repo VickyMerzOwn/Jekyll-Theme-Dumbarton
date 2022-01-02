@@ -81,7 +81,7 @@ help_tips: false                                    # options: true, false  | us
 # =======================================#
 # -----------BUILD SETTINGS--------------#
 #========================================#
-theme: 
+theme: jekyll-theme-cayman
 markdown: kramdown
 
 kramdown:
