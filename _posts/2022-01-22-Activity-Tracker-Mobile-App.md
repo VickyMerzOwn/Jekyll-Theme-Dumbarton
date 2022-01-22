@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Activity Tracker Mobile App"
-description: "Built as part of FOSS Overflow Winter of Code organized by OpenLake, IIT Bhilai"
+description: "Built as part of FOSS Overflow organized by OpenLake, IIT Bhilai"
 date:   2022-01-21 20:01:21 -0400
 type: card-img-top
 categories: latin text
