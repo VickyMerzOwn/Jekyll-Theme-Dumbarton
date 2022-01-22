@@ -2,12 +2,12 @@
 layout: post
 title:  "Activity Tracker Mobile App"
 description: "Built as part of FOSS Overflow Winter of Code organized by OpenLake, IIT Bhilai"
-date:   2022-01-22 20:01:21 -0400
+date:   2022-01-21 20:01:21 -0400
 type: card-img-top
 categories: latin text
 image: /assets/img/posts/2022-01-22-Activity-Tracker-Mobile-App #/assets/img/posts/
 caption:
-last-updated: 2020-10-26 20:01:21 -0400
+last-updated: 2022-01-21 20:01:21 -0400
 categories: Project Blog
 tag: Free and Open Source Software
 author: Satvik Vemuganti
