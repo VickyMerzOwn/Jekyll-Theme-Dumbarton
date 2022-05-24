@@ -1,4 +1,4 @@
-`---
+---
 layout: post
 title:  "Activity Tracker Mobile App"
 description: "Built as part of FOSS Overflow organized by OpenLake, IIT Bhilai"
@@ -12,7 +12,7 @@ categories: Project Blog
 tag: Free and Open Source Software
 author: Satvik Vemuganti
 card: card-1
----`
+---
 
 ## Introduction
 

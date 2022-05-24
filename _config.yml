@@ -48,7 +48,7 @@ ui_theme: abyss                                 # Create your own theme by setti
 tags:  post jekyll styleguide ipsum
 twitter-widget: false # true,false                  # Used to show your twitter timeline on blog home page
 
-comments: false                                     # Used to enable comments on blog posts
+comments: true                                     # Used to enable comments on blog posts
 gitalk_client_id:             
 gitalk_client_secret:    
 gitalk_repo:
