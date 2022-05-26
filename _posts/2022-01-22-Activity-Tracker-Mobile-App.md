@@ -6,7 +6,7 @@ date:   2022-01-21 20:01:21 -0400
 type: card-img-top
 categories: latin text
 image: /assets/img/posts/2022-01-22-Activity-Tracker-Mobile-App #/assets/img/posts/
-caption:
+caption: "Where would this go?"
 last-updated: 2022-01-21 20:01:21 -0400
 categories: Project Blog
 tag: Free and Open Source Software
