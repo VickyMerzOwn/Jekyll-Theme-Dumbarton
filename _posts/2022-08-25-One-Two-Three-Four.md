@@ -205,7 +205,7 @@ Been a hectic few weeks. What with coursework, GSoC, and OpenLake to handle Coll
 <br>
 <br>
 <div style="text-align: center">
-    <embed src="/assets/img/posts/2022-25-08-One-Two-Three-Four/1.png" alt="drawing" height="350" position="center"/><br>
+    <embed src="/assets/img/posts/2022-25-08-One-Two-Three-Four/2.png" alt="drawing" height="350" position="center"/><br>
 </div>
 <br>
 <br>
