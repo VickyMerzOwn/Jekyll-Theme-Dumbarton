@@ -16,12 +16,12 @@ card: card-1
 
 ### 'sup?
 
-Oh god, it's been a while. Friends have been, pardon me guys, nagging me for this piece and so..... \**(drumbeats)* here it is. I hope to publish a tad bit *(**OKaY**, a lot)* more frequently. Today, I hope to cover all that I've learned and reflect a bit. My contributions to Software Heritage started with very minor bug fixes. After warming up with this, I went on to write indexers for Packagist (metadata file: composer.json) and dart (metadata file: pubspec.yaml) packages. On the way, I found out about the true potential of VSCode and the tools it has to offer (the debugger is on steroids people). Sourcegraph is another project I found extremely cool and think I'll be using it quite a lot in building and writing edge test cases for the indexers I'm making. 
-<br>
+Today, I hope to cover all that I've learned and reflect a bit. My contributions to Software Heritage started with very minor bug fixes. After warming up with this, I went on to write indexers for Packagist (metadata file: composer.json) and dart (metadata file: pubspec.yaml) packages. On the way, I found out about the true potential of VSCode and the tools it has to offer (the debugger is on steroids people). Sourcegraph is another project I found extremely cool and think I'll be using it quite a lot in building and writing edge test cases for the indexers I'm making. 
+<!-- <br>
 <br>
 <div style="text-align: center"><iframe src="https://giphy.com/embed/pVkmGyqYRt4qY" width="480" height="371" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-cute-fat-pVkmGyqYRt4qY">Lazy me 🥱</a></p></div>
 <br>
-<br>
+<br> -->
 Codemeta, Schema, & SPDX are central to the indexers of Software Heritage and so I'll write a bit about them. In the last blog, I briefly touched upon how web 3.0 is the web of knowledge connections, the semantic web. Projects like Wikidata are an embodiment of the semantic web and act as central storage for structured data. Working on this extracted metadata is Software Heritage's own semantic search module, swh-search, and so there's a section in this blog for that. 
 <br>
 <br>
@@ -66,7 +66,7 @@ And god was it a pain, for the graphics were so bad in spite of giving it ample 
 
 I should probably shift the position of this section to maintain chronology. Not that it changes anything though. Before I understood the debugger, I'd use GitHub, of all things possible, to debug my code. In my defense, I wasn't using VSC yet since I hadn't set it up for remote development on my VM. Anyways, here's how I worked. If I found a function, GitHub would allow me to see the definition if I clicked on it. I'm ashamed to put this out there, but it is what I did. This is worse than using VSC's `go-to definition`.
 
-\**Ugghh. Primitive me*
+<!-- \**Ugghh. Primitive me* -->
 
 Anyways, now I've got my own debugging setup with config files (nothing too fancy, I promise). I use the Python extension for VSC to debug. Far from being a pro, I'm comfortable with using breakpoints to dive through code confidently with the debugger as my inflatable in case I drown. Pardon me for the analogies, but I can't resist since it's been a while since I've blogged. 
 
