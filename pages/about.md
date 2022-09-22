@@ -17,6 +17,7 @@ Meanwhile, here are a few things:
 - [Updated Resume](/assets/pdf/vitae.pdf) (Same doc as you'd get on clicking the link in the nav bar)
 - [GSoC Certificate](/assets/pdf/completion_certificate_2022_contributor.pdf), [GSoC Acceptance Letter](/assets/pdf/acceptance_letter_2022_Vemuganti-Sesha%20Satvik.pdf), and [Verification Letter](/assets/pdf/verification_letter_2022_Vemuganti-Sesha%20Satvik.pdf)
 - [Google Solution Challenge Certificate](/assets/pdf/SatvikVemuganti.pdf)
+- [Network Security Research Group, IIT-BHU Research Internship report](/assets/pdf/lab_report_1.pdf)
 
 ### May 24th, 2022
 I have been wanting to do this for as long as I can remember. Writing blogs seems like the perfect opportunity to take some time to introspect on what I am doing every day and think about how I plan to achieve my goals. <br>
