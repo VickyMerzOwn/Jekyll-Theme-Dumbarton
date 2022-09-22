@@ -9,6 +9,16 @@ last-updated: 2020-10-30 5:55 PM
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
 
+### September 22nd, 2022
+Alas, I'm back to updating this.
+I'm a few blogs into my blogging goals.
+Working on a few research projects of my own, while planning for next summer. Looking forward to work in a research lab outside of India for Summer '23.
+Meanwhile, here are a few things:
+- [Updated Resume](/assets/pdf/vitae.pdf) (Same doc as you'd get on clicking the link in the nav bar)
+- [GSoC Certificate](/assets/pdf/completion_certificate_2022_contributor.pdf), [GSoC Acceptance Letter](/assets/pdf/acceptance_letter_2022_Vemuganti-Sesha%20Satvik.pdf), and [Verification Letter](/assets/pdf/verification_letter_2022_Vemuganti-Sesha%20Satvik.pdf)
+- [Google Solution Challenge Certificate](/assets/pdf/certificate_2021_Vemuganti-Sesha%20Satvik.pdf)
+
+### May 24th, 2022
 I have been wanting to do this for as long as I can remember. Writing blogs seems like the perfect opportunity to take some time to introspect on what I am doing every day and think about how I plan to achieve my goals. <br>
 
 Currently, I am enjoying the freedom of my summer vacation, while steadily making an effort to use my time better than I did my last.<br>
