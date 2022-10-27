@@ -2,7 +2,7 @@
 layout: post
 title:  "A new internet and why we need one..."
 description: "Problems with the internet of today, how to fix 'em, what's been done so far, and what's left to do."
-date:  2022-10-28 20:30:00 +0530
+date:  2022-10-27 20:30:00 +0530
 type: card-img-top
 categories: latin text
 image: 
