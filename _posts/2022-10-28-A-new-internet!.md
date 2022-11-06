@@ -58,7 +58,7 @@ Certificates of authentication are provided by entities (roots of trust) that be
 <br>
 <br>
 
-SCiON proposes that several subsets of the internet can agree on their own roots of trust and form **isolation domains**. These roots of trust would be responsible to authenticate entities within each domain (in the SCiON control plane). Users can select which ISD to be a part of depending on the root of trust to which they belong. These roots of trust support Modern log-based Public Key infrastructures for authentication. A prominent challenge would be the global verifiability of users. 
+SCiON proposes that several subsets of the internet can agree on their own roots of trust and form **isolation domains**. These roots of trust would be responsible to authenticate entities within each domain (in the SCiON control plane). Users can select which ISD to be a part of depending on the root of trust to which they belong. These roots of trust support modern discrete log-based Public Key infrastructures for authentication. A prominent challenge would be the global verifiability of users. 
 
 #### Control
 
