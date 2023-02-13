@@ -2,12 +2,12 @@
 layout: post
 title:  "A new internet and why we need one..."
 description: "Problems with the internet of today, how to fix 'em, what's been done so far, and what's left to do."
-date:  2024-10-27 20:30:00 +0530
+date:  2022-10-27 20:30:00 +0530
 type: card-img-top
 categories: latin text
 image: 
 caption:
-last-updated: 2024-10-28 20:30:00 +0530
+last-updated: 2022-11-05 20:30:00 +0530
 categories: SCiON
 tag: Scalability, Control, and Isolation
 author: Satvik Vemuganti
@@ -18,9 +18,9 @@ card:
 
 One can vouch for 2 out of 3 things in the above quote. As for the third, SCiON can connect a whole lot more than a dozen machines with each other.
 
-The internet to me, after a couple of months of formal coursework in computer networks (and a few years of using and informal learning of it), is an abstract world that human beings have invented. It has citizens, infrastructure, resources to compete over, and most importantly some laws. Protocols. Protocols govern the way it essentially works. The division of labor employed in this abstract world would be the TCP / IP stack of layers the internet is divided into. At the network layer, one would find rules such as DHCP and, particularly notable in the context of SCiON, BGP. The problems with the internet of today, as several publications on the scion-architecture website point out, can be attributed to the context over which today's internet was built. The internet was built with a "throw and pray" attitude. It was meant to connect end hosts (without much computing power at the time).
+The internet to me, after a couple of months of formal coursework in computer networks (and a few years of using and informal learning of it), is an abstract world that human beings have invented. It has citizens, infrastructure, resources to compete over, and most importantly some laws. Protocols. Protocols govern the way it essentially works. The division of labor employed in this abstract world would be the TCP / IP stack of layers the internet is divided into. At the network layer, one would find rules such as ICMP, ARP and, particularly notable in the context of SCiON, BGP. The problems with the internet of today, as several publications on the scion-architecture website point out, can be attributed to the context over which today's internet was built. The internet was built with a "throw and pray" attitude. It was meant to connect end hosts (without much computing power at the time).
 
-Taking from Prof. Adrian Perrig's talk at CyLab CMU, "the internet is perceived to be a monumental structure that has stood the test of time and as something that cannot be changed". It is more analogous to this structure in the image below. The 4 pillars of today's internet are:
+Taking from Prof. Adrian Perrig's talk at CyLab CMU, "the internet is perceived to be a monumental structure that has stood the test of time and as something that cannot be changed". It is more analogous to this structure in the image below. The 4 brittle pillars of today's internet are:
 - Control
 - Transparency
 - Availability
@@ -33,6 +33,8 @@ Taking from Prof. Adrian Perrig's talk at CyLab CMU, "the internet is perceived 
 </div>
 <br>
 <br>
+
+These are areas where today's internet falls short of expected standards. SCiON revolves around strengthening these pillars.
 
 #### Trust, its Scalability, and Isolation Domains
 
@@ -56,22 +58,22 @@ Certificates of authentication are provided by entities (roots of trust) that be
 <br>
 <br>
 
-SCiON proposes that several subsets of the internet can agree on their own roots of trust and form **isolation domains**. These roots of trust would be responsible to authenticate entities within each domain. Users can select which ISD to be a part of depending on the root of trust to which they belong. These roots of trust support Modern log-based Public Key infrastructures for authentication. A prominent challenge would be the global verifiability of users. 
+SCiON proposes that several subsets of the internet can agree on their own roots of trust and form **isolation domains**. These roots of trust would be responsible to authenticate entities within each domain (in the SCiON control plane). Users can select which ISD to be a part of depending on the root of trust to which they belong. These roots of trust support modern discrete log-based Public Key infrastructures for authentication. A prominent challenge would be the global verifiability of users. 
 
 #### Control
 
-Going back to the image, control is another one of the brittle pillars of today's internet. Governments around the world have announced networks including certain countries and leaving out a certain few others. Users have voiced concerns about being able to be reached by users from certain countries. In either case, this would be possible with Isolation Domains. Another aspect to control would be the paths that the datagrams take. The current internet offers minimal control of paths. Of course, ISPs propagate BGP update messages. But there is limited control over these messages after they leave. Other ISPs decide which of these messages propagate. And the destination ISPs can barely decide which of these messages are able to reach that ISP.
+Going back to the image, control is another one of the brittle pillars of today's internet. Governments around the world have announced networks including certain countries and leaving out a certain few others. Users have voiced concerns about being able to be reached by users from certain countries. In either case, this would be possible with Isolation Domains. Another aspect to control would be the paths that the datagrams take. The current internet offers minimal control of paths. Of course, ISPs propagate BGP update paths. But there is limited control over these paths after they leave a border router. Other ISPs decide which of these routes actually propagate. And the destination ISPs can barely decide which of these routes are able to reach that ISP.
 
 While it seems from the above argument that end-points (sources and destinations) need to have control over which path the packets take, this too would be sub-optimal. ISPs constitute a fundamental and important piece to the puzzle of the internet without which it wouldn't function. And so they require some path control to implement their own policies. SCiON helps in this regard by allowing ISPs some control over the path but more importantly empowering end-points to have a say over the path of datagrams. How is this done?
 
 #### Transparency
 
-Once again, how would we define transparency? We would like sending entities to have information about where their packet would go while traversing the internet. Simply downloading the BGP updates wouldn't give the path. Downloading the state of routing tables (of which there are lots) would be enough to determine this information, that too only probabilistically. One could put the forwarding information in the datagrams to solve this issue. And this wouldn't mean that end-points are being given a full say in the route control since the network would still define the possible forwarding information that could go into these packets.
+Once again, how would we define transparency? We would like sending entities to have information about where their packet would go while traversing the internet. Even by keeping track of BGP updates and referring to the forwarding tables, it is impossible to inform end hosts about the path where their traffic will be routed with BGP. One could put the forwarding information in the datagrams to solve this issue. And this wouldn't mean that end-points are being given a full say in the route control since the network would still define the possible forwarding information that could go into these packets.
 
-Also under transparency falls the transparency of trust roots. Which entities does a user trust for any particular authentication, say a TLS connection to a server? Isolation Domains offer a fix by just reducing the number of roots to trust.
+Also under transparency falls the transparency of trust roots. Which entities does a user trust for any particular authentication, say a TLS connection to a server? Isolation Domains offer a fix by providing scoped trust where one can choose the "trust bubble" to which one belongs.
 
-###### Source routing? 
-Source routing allows a sender of a packet to partially or completely specify the route the packet takes through the network. This is in contrast to conventional routing, where routers in the network determine the path incrementally based on the packet's destination. There does exist some source routing in today's internet. However, this doesn't scale to inter-domain networks, as a source would require to know the network topology to determine paths. In order to be able to scale path control, SCiON lets sources select amongst a relatively small set of paths. This way, SCiON relies on source-selected paths and packet-carried forwarding-state instead of full-fledged source routing.
+###### Source routing paradigm? 
+Source routing allows a sender of a packet to partially or completely specify the route the packet takes through the network. This is in contrast to conventional routing, where routers in the network determine the path incrementally based on the packet's destination. There does exist some segment routing[^1] (that "leverages the source routing paradigm") in today's internet. However, this doesn't scale to inter-domain networks, as a source would require to know the network topology to determine paths. In order to be able to scale path control, SCiON lets sources select amongst a relatively small set of paths. This way, SCiON relies on source-selected paths and packet-carried forwarding-state instead of full-fledged SR.
 
 #### Availability
 
@@ -80,7 +82,7 @@ Availability is defined today in terms of *9s* (99.9% would be 3 *9s* of availab
 But is it worth working so hard to devise solutions to make sure the internet is not unavailable for those extra 8.6 (or 86) seconds a day? The internet has, as I point out once again, grown far beyond what it was meant to be. It is used for the flow of sensitive mission-critical information. It has applications varying from air traffic control to remote, robot-operated surgical exercises. And then there are the services running 24 x 7. 
 
 The only way (seemingly) to solve it? Replace BGP...
-BGPSEC is an extension of BGP that fixes some of the above issues brought by BGP rather inefficiently by bringing new issues. Traffic hijacking is still a problem with BGPSec. There is no security guarantee for inter-domain routing. Essentially, extensions and scaffolding has been going on since the internet was introduced. This has brought everyone to believe that the internet has stood the test of time where in reality, it has been patched up and patched up again just to keep it working. Not the way any great engineering product should be.
+BGPSEC is an extension of BGP that fixes some of the above issues brought by BGP rather inefficiently by bringing new issues. Traffic hijacking and non-scalability are big problems with BGPSec. There is no security guarantee for inter-domain routing. Essentially, extensions and scaffolding has been going on since the internet was introduced. This has brought everyone to believe that the internet has stood the test of time where in reality, it has been patched up and patched up again just to keep it working. Not the way any great engineering product should be.
 
 #### Other Future Internet Architectures
 
@@ -113,7 +115,7 @@ And just before diving into the architecture of SCiON and the several protocols 
 
 #### Isolation Domains
 
-A trust domain means to have a region in which the entities of the region can agree on who authenticates trust in that region. This region should also agree on a set of ISPs to manage the ISD core. How exactly to partition the internet into ISDs is a problem that is still being worked upon and it's possibly going to be along geographical lines. From the SCiON book, "an AS (Autonomous System) is a self-contained network administered by a single entity". An Isolation Domain (ISD) constitutes a logical clustering of such ASes. 
+A trust domain means to have a region in which the entities of the region can agree on who authenticates trust in that region. This region should also agree on a set of ISPs to manage the ISD core. How exactly to partition the internet into ISDs is a problem that is still being worked upon and it's possibly going to be along geographical lines. From [the SCiON book](https://scion-architecture.net/pdf/SCION-book.pdf) [^2], "an AS (Autonomous System) is a self-contained network administered by a single entity". An Isolation Domain (ISD) constitutes a logical clustering of such ASes. 
 
 One problem that this solves is that faced by monopolistic and oligopolistic architectures for authentication. Both these models have in common that the scope of the key is unrestricted. The compromise of a single point (protected by modern cryptography's security guarantees) can lead to compromising billions of hosts around the world. Isolation can diminish the attack vector of these large-scale attacks by structuring entities into isolation domains. Each isolation domain has its own authorities for managing keys, limiting the scope of attacks. With SCiON, clients are enabled to choose Trust Root Configurations (TRCs) they'd like to use.
 
@@ -121,7 +123,7 @@ Another property such ISDs provide helps in isolation for the propagation of rou
 
 #### Beaconing for Route Discovery
 
-The ASes in the ISD core initiate route construction beacons. Path Construction Beacons (PCBs) are a scalable and secure way of disseminating topological information. Uses a k-wise multi-path flood to provide each autonomous domain with multiple entities. How is this implemented?
+The ASes in the ISD core initiate path construction beacons. Path Construction Beacons (PCBs) are a scalable and secure way of disseminating topological information. Uses a k-wise multi-path flood to provide each autonomous domain with multiple entities. How is this implemented?
 
 The ISD core maintains a path server. Destination domains can choose paths under which they'd like to be reached and upload this to the path server in the ISD core. Consider the image shown below. If a host within the blue autonomous domain would like to reach a host in the red autonomous domain, it'll fetch the red paths from the server and combine it with the blue paths. 
 
@@ -152,9 +154,11 @@ Inter-ISD communication is also possible. (Please refer to the image below) End 
 
 #### Link Failures
 
-If the link inside an AD fails, we assume there is a separate routing protocol inside this AD that'll help the packet reach its destination. SCiON only dictates the ingress and egress within an AD. It doesn't matter how the packet traverses within an AD.
+If the link inside an AS fails, we assume there is a separate routing protocol inside this AS that'll help the packet reach its destination. SCiON only dictates the ingress and egress within an AS. It doesn't matter how the packet traverses within an AS.
 
 What if a border router fails? SCiON uses multi-path forwarding by default. For every socket that is created, several paths are used at the same time. For any path that fails, there is thus an alternative path to be taken. Anyways, the Path Construction Beacons (PCBs) are constantly being sent. So even if the links fail, the sender continues to receive a number of functioning beacons. When a link fails, a message is sent to the ISD core to delete all paths containing the particular link. 
+
+However, I have been told (after a kind review by [Matthias Frei](https://github.com/matzf)) that the above described path revocation mechanism has now been discontinued. The [SCiON book Volume 2](https://link.springer.com/book/10.1007/978-3-031-05288-0) discusses the motive behind this. In summary, "the complexity of this system was not considered worth the benefits. SCION end hosts now individually discover transient link failures, the control plane is not notified about this."
 
 #### SCiON Header
 
@@ -180,7 +184,7 @@ SCiON places more emphasis on security against other FIAs. It has a number of se
 
 #### Border Gateway Protocol (BGP)
 
-In the article so far, we must've come across the abbreviation BGP quite a few times already (10 to be exact 🤷). This protocol (routing protocol) is essentially the postal service of the internet. When a user from Hyderabad, India loads a website with origin servers in Zurich, Switzerland, BGP is the protocol that enables that communication to happen quickly and efficiently. Before diving into BGP, let's take a briefing on Autonomous Systems (ASes). The Internet is a network of networks. It is broken up into hundreds of thousands of smaller networks known as autonomous systems (ASes). Each of these networks is essentially a large pool of routers run by a single organization. If we continue to think of BGP as the Postal Service of the Internet, ASes are like individual post office branches.
+In the article so far, we must've come across the abbreviation BGP quite a few times already (10 to be exact 🤷). This protocol (routing protocol) is essentially the postal service of the internet. When a user from Hyderabad, India loads a website with origin servers in Zurich, Switzerland, BGP is the protocol that enables that communication to happen quickly and efficiently. Before diving into BGP, let's take a briefing on Autonomous Systems (ASes). The Internet is a network of networks. It is broken up into several smaller networks known as autonomous systems (ASes, there are currently a bit more than 100k ASes[^3]). Each of these networks is essentially a large pool of routers run by a single organization. If we continue to think of BGP as the Postal Service of the Internet, ASes are like individual post office branches.
 
 In BGP, peers are created manually between routers to initiate a TCP session on port 179. Every 30 seconds (protocol default value, adjustable), a BGP speaker delivers 19-byte keep-alive messages to sustain the connection. BGP stands out from other routing protocols in that it uses TCP as its transport protocol. Internal BGP is the term used to describe BGP between two peers within the same autonomous system (AS) (iBGP or Interior Border Gateway Protocol). It is known as External BGP when it operates between various autonomous systems (eBGP or Exterior Border Gateway Protocol). While iBGP peers can be interconnected through other intermediate routers, border or edge routers, sometimes known as eBGP peers, are routers on the edge of one AS that are exchanging information with another AS. Other deployment topologies are also feasible, such as eBGP peering inside a VPN tunnel, which enables the secure and isolated exchange of routing data between two remote locations. 
 
@@ -220,7 +224,9 @@ In 2020, SIDN Labs connected to the global SCiONLab testbed, through BGP-free co
 
 DNS is the directory of the internet that resolves domain names to IP addresses. DNSSEC provides authentication for DNS. Like BGPsec, DNSSEC relies on a single or very small number of roots of trust (oligopolistic trust model). As of recent, DDoS attacks have been widely used to prevent access to servers or network resources. For example, a very large attack with an unprecedented amount of attack traffic — exceeding 1 Tbps — on DNS infrastructure maintained by a company called Dyn that provides core Internet services for Twitter, SoundCloud, Spotify, and Reddit among others. SCiON recognizes the importance of scaling the authentication of entities of the internet such as ASes for routing, domains for TLS, and name servers for DNS.
 
-SCiON's name servers are analogous to DNS servers on the current internet. SCiON proposes the RAINS system for translating a human-understandable name into a SCiON address. The system uses the (ISD, AS) tuple to look up and construct end-to-end paths. As described above, the end host as well as the end-to-end path are then placed in the SCiON packet header to enable delivery to a given destination. Path servers store mappings from AS identifiers to sets of announced path segments, which are arranged in a hierarchical caching system similar to DNS. Overall, SCiON provides 3 basic mechanisms to shield against DDoS attacks:
+Here, we make an important note. The Domain Name System resolves domain names to an IP or to a SCiON address. The RAINS system that was proposed resolves a SCiON destination address to a **path** in the SCiON network.
+    
+SCiON proposes the RAINS system for translating a human-understandable name into a SCiON address. The system uses the (ISD, AS) tuple to look up and construct end-to-end paths. As described above, the end host as well as the end-to-end path are then placed in the SCiON packet header to enable delivery to a given destination. Path servers store mappings from AS identifiers to sets of announced path segments, which are arranged in a hierarchical caching system. Overall, SCiON provides 3 basic mechanisms to shield against DDoS attacks:
 - Non-registered (hidden) path segments
 - Short-lived paths
 - Multipath communication
@@ -235,8 +241,10 @@ Here's an image showing an example Assertion space in RAINS (a cool recursive ac
 <br>
 <br>
 
-#### SIBRA (Anti DDoS)
+Since routing is orthogonal to name-resolution, SCiON can also be used with DNS. The RAINS system was proposed as an improvement over DNS, but it's not strictly necessary. Also, perhaps noteworthy is that RAINS remained a research project and now is no longer being worked on. Some researchers at ETH and OVGU Magdeburg are working on a system called RHINE, which is an improved DNSSEC (vs RAINS being a completely new system). (Thanks for pointing this out, [@matzf](https://github.com/matzf))
 
+#### CoLIBRI (Anti DDoS, earlier SIBRA)
+    
 Typical defenses to DDoS attacks perform traffic scrubbing in upstream ASes or the cloud, but greater bandwidth attacks. Some other defense systems/mechanisms include Quality of Service architectures at different granularities, improved network capabilities, fair resource reservation mechanisms, and a botnet-size independence property. All these have drawbacks that don't scale to the bandwidth of more recently demonstrated DDoS attacks. SIBRA (Scalable Internet Bandwidth Reservation Architecture) provides a novel bandwidth allocation system resolving these drawbacks and operating at the scale of the internet.
 
 SIBRA provides inter-domain bandwidth allocations that let an AS guarantee a minimal amount of bandwidth to its end hosts by limiting the possible paths in end-to-end communication. An important property of SIBRA is the **per-flow** *stateless* **fast-path operation** on transit routers for renewing reservations, policing, and monitoring. This provides the efficiently scalable router operation SCiON is looking for. 
@@ -251,6 +259,8 @@ Here's a sample topology from the SCiON book showing briefly how SIBRA works in 
 <br>
 <br>
 
+More recently, CoLIBRI (Cooperative Lightweight Inter-domain Bandwidth-Reservation Infrastructure) is the bandwidth allocation infraasstructure being used. It differs slightly from SIBRA in security and performance but, SIBRA being an ancestor, takes mostly from SIBRA. Also worth a little note is the fact that since CoLIBRI is implemented in a real system, it has been evaluated on all processing steps (like header updates, NIC interaction etc.). SIBRA has only been evaluated for parsing and MAC validation.
+    
 Hidden COBRA is the North Korean botnet infrastructure being used to target critical infrastructure in the US and around the globe. SCiON claims to ensure communication despite the attacks.
 
 #### Secure Swiss Finance Network
@@ -271,10 +281,17 @@ Here's a visualization to bring into perspective how the SSFN is organized from 
 
 It now feels appropriate to end this blog. Don't get me wrong. A lot of topics are yet to be discussed but here I am, a few weeks into exploring this future internet architecture and its possibilities. Some questions for future blogs may be understanding how SCiON counters censorship on the internet, flaws with HTTP, and how SCiON deals with them. A crucial part of the SCiON project would be the research on path-aware networking by the recently formed PANRG of the IETF. Another paper by SCiON researchers at NDSS'22 shows how most popular VPN implementations are vulnerable to DoS attacks. SCiON packet filtering and authentication mechanisms can help mitigate this. There is also the work on Secure Backbone Autonomous Systems (SBAS) that's going to be presented in Usenix '22.
 
-Innovations that drive mankind forward start in the imagination of visionaries. Once the visionaries figure out what it's meant to be, it's their job to show everyone the world as they see it. SCiON is a vision of a future internet that is secure, scalable, and sovereign. This vision is being made a reality by the team at Anapaya Systems. 
+Innovations that drive mankind forward start in the imagination of visionaries. Once the visionaries figure out what it's meant to be, it's their job to show everyone the world as they see it. SCiON is a vision of a future internet that is secure, scalable, and sovereign. Several individuals and groups are working towards this vision including the Network Security group at ETH Zurich, the Netsys Lab at OVGU Magdeburg, a team at Anapaya and the SCiON Association.
 
 India, being a developing nation, is witnessing a huge demand for indigenous innovations to problems faced by the common man in the day-to-day. An example of innovation would be the hugely successful, state-developed Unified Payment Interface (UPI). An interesting problem to think about would be figuring out how this UPI could be engineered to leverage the security features provided by a SCiON internet. These are the sort of problems whose innovative solutions catapult a developing country into becoming a first-world nation. And these are exactly the sort of things that I'm excited to work on, contribute to, and simply be a part of. 
 
+#### Sources
+[^1]: https://www.rfc-editor.org/rfc/rfc8402.txt
+[^2]: SCiON: A Secure Internet Architecture, Adrian Perrig, Pawel Szalachowski, Raphael M. Reischuk, Laurent Chuat, ETH Zurich
+[^3]: Thanks to [Nicola Rustignoli](https://rustignoli.com) for correcting me on some facts including this one.
+<!-- 
+####
+I'd like to thank the following people for taking the time to read, review, and suggest edits to the blog-post.  -->
 <!-- FAQ page
 The SCION book (https://scion-architecture.net/pdf/SCION-book.pdf)
 FOSDEM (by Mateusz Kowalski)
