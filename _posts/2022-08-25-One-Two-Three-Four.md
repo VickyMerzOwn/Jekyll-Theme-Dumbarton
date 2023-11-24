@@ -172,7 +172,7 @@ Time for our first assignment. The instructor wasn't letting us off easily on th
 
 Posted the assignment at 11:45 PM on Saturday night and we were waiting for it in the CC Lab (B109). We opened it, and the *.txt* encoded document had gibberish and we were shocked. It was a few minutes till we realized that it wasn't only the text file that was shared with us.
 
-Apparently, we had a shift cipher on our hands. Cool! Easy right? Well, NO! Still had to code the decryption function. I got started and it was irritating as crap to write a seemingly simple piece of code. PRESSSSSUUUUURRREEE. Notebooks and pens and a lot of meaningless scribbling later, Ananya came up with the idea to find the code online. Why didn't I think of this earlier??!! We found a python script. But it was working only over a field of 26 characters. All characters were encoded and decoded into capital Alphabet. A lot of ASCII characters were absent. The changes made seem simple now but god knows how much we racked our brains. It goes to the point that it is embarrassing to think of right now.
+Apparently, we had a shift cipher on our hands. Cool! Easy right? Well, NO! Still had to code the decryption function. I got started and it was irritating as crap to write a seemingly simple piece of code. PRESSSSSUUUUURRREEE. Notebooks and pens and a lot of meaningless scribbling later, one of us came up with the idea to find the code online. Why didn't I think of this earlier??!! We found a python script. But it was working only over a field of 26 characters. All characters were encoded and decoded into capital Alphabet. A lot of ASCII characters were absent. The changes made seem simple now but god knows how much we racked our brains. It goes to the point that it is embarrassing to think of right now.
 
 Once the code was running, we didn't know what to look for. Chaitanya was silently playing about with his own code and casually mentioned that he saw something like a "drive.google.com" somewhere in the output but it must have been a mistake or a coincidence. With that in the back of my mind, I was gazing at the plaintext output, lost in my own thoughts. Then it flashed, "drive.google.com/..." Terminated the running process immediately and pasted the drive link that I found. Jo rona aaya na boss, can't wish something like this on my worst enemy. Yet someone was doing this to us. This is what we found:
 
@@ -210,4 +210,4 @@ Been a hectic few weeks. What with coursework, GSoC, and OpenLake to handle Coll
 <br>
 <br>
 
-Cheers to that, Ananya and Chaitanya! Let's see how we do!
+Cheers to us! Let's see how we do!
